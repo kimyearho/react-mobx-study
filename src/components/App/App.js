@@ -1,8 +1,8 @@
 import React from 'react';
-import Counter from './Counter'
-
 import logo from './logo.svg';
-import './App.css';
+import '../../assets/css/App.css';
+
+import Counter from '../Counter/Counter'
 
 function App() {
   return (
@@ -20,8 +20,8 @@ function App() {
         >
           Learn React
         </a>
+        <Counter />
       </header>
-      <Counter />
     </div>
   );
 }
