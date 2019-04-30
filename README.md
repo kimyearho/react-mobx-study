@@ -2,3 +2,10 @@
 
 # React 및 Mobx 차이
 [링크](http://woowabros.github.io/experience/2019/01/02/kimcj-react-mobx.html)
+
+```
+1. git clone ...
+2. cd react-mobx-study
+3. yarn
+4. (Complate) yarn start
+```
