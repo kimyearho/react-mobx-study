@@ -46,7 +46,7 @@ const styles = theme => ({
     }
 });
 
-@inject('statusstore')
+@inject('root')
 @observer
 class User extends Component {
 
@@ -63,12 +63,13 @@ class User extends Component {
     }
 
     render() {
-        const { statusstore, classes } = this.props;
+        const { root, classes } = this.props;
+        
         return (
             <div className="App-header">
                 <div className={classes.mgnTop20}>
                     <h1>User Status</h1>
-                    {statusstore.userInfo.userName} / {statusstore.userInfo.userJob}
+                    {root.userStore.userInfo.userName} / {root.userStore.userInfo.userJob}
                     <Grid container className={classes.root} spacing={24}>
                         <Grid item xs></Grid>
                         <Grid item xs={6}>
@@ -86,19 +87,19 @@ class User extends Component {
                                     <TableBody>
                                         <TableRow>
                                             <TableCell className={classes.cell} align="center">
-                                                {statusstore.userStatus.level}
+                                                {root.userStore.userStatus.level}
                                             </TableCell>
                                             <TableCell className={classes.cell} align="center">
-                                                {statusstore.userStatus.minHp} / {statusstore.userStatus.maxHp}
+                                                {root.userStore.userStatus.minHp} / {root.userStore.userStatus.maxHp}
                                             </TableCell>
                                             <TableCell className={classes.cell} align="center">
-                                                {statusstore.userStatus.minMp} / {statusstore.userStatus.maxMp}
+                                                {root.userStore.userStatus.minMp} / {root.userStore.userStatus.maxMp}
                                             </TableCell>
                                             <TableCell className={classes.cell} align="center">
-                                                {statusstore.userStatus.str}
+                                                {root.userStore.userStatus.str}
                                             </TableCell>
                                             <TableCell className={classes.cell} align="center">
-                                                {statusstore.userStatus.def}
+                                                {root.userStore.userStatus.def}
                                             </TableCell>
                                         </TableRow>
                                     </TableBody>
@@ -113,15 +114,15 @@ class User extends Component {
                         <Grid item xs></Grid>
                         <Grid item xs={6}>
                             <Button variant="contained" color="primary" className={classes.button}
-                                onClick={statusstore.levelUp}>
+                                onClick={root.userStore.levelUp}>
                                 레벨업
                             </Button>
                             <Button variant="contained" color="secondary" className={classes.button}
-                                onClick={statusstore.enemyAttack}>
+                                onClick={root.enemyStore.enemyAttack}>
                                 데미지 테스트
                             </Button>
                             <Button variant="contained" color="primary" className={classes.button}
-                                onClick={statusstore.usePotion}>
+                                onClick={root.userStore.usePotion}>
                                 포션 사용
                             </Button>
                         </Grid>
