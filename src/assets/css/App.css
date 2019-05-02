@@ -1,5 +1,11 @@
 .App {
-  text-align: center;
+  width: 100%;
+  margin: auto;
+  /* overflow-x: hidden; */
+}
+
+.TestlineBox {
+  border: 1px solid #000;
 }
 
 .App-logo {

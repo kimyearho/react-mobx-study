@@ -50,18 +50,6 @@ const styles = theme => ({
 @observer
 class User extends Component {
 
-    state = {
-        open: false
-    }
-
-    handnOpen = () => {
-        this.setState({ open: true })
-    }
-
-    handleClose = () => {
-        this.setState({ open: false })
-    }
-
     render() {
         const { root, classes } = this.props;
         
@@ -129,15 +117,6 @@ class User extends Component {
                         <Grid item xs></Grid>
                     </Grid>
                 </div>
-                <Snackbar
-                    open={this.state.open}
-                    onClose={this.handleClose}
-                    TransitionComponent={Fade}
-                    ContentProps={{
-                        'aria-describedby': 'message-id',
-                    }}
-                    message={<span id="message-id">레벨업!!</span>}
-                />
             </div >
         )
     }
