@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import '../../assets/css/App.css';
-
 import Grid from '@material-ui/core/Grid';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
 import Header from '../Commons/Header'
 import LeftContents from '../Commons/LeftContents'
 import RightContents from '../Commons/RightContents'
