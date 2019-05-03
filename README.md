@@ -3,7 +3,9 @@
 ### 1. Redux 및 Mobx 차이
 >[링크클릭](http://woowabros.github.io/experience/2019/01/02/kimcj-react-mobx.html)
 
-### 2. Mobx Store 및 Multiple Store 구성
+### 2. 기본 문법 및 React Component 사용.
+
+### 3. Mobx Store 및 Multiple Store 구성
 - 비지니스 로직 분리
 - Decorator 사용
 - Provider를 통해 단일 및 다중 Store 등록 관리
