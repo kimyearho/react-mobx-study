@@ -8,7 +8,11 @@
 - Decorator 사용
 - Provider를 통해 단일 및 다중 Store 등록 관리
 
-### 3. Material UI 및 공통 레이아웃 구성
+### 3. Component Parent 및 Child Data 전달
+- props를 이용한 자식 데이터 전달
+- callback을 이용한 부모로 데이터 전달
+
+### 4. Material UI 및 공통 레이아웃 구성
 - Material-UI Framework 적용
 - 공통 레이아웃 추가
 - 샘플 좌측 레이아웃, 카드 컴포넌트 구성
