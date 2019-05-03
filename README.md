@@ -12,7 +12,7 @@
 - Material-UI Framework 적용
 - 공통 레이아웃 추가
   
-  ![Imgur](https://i.imgur.com/A3SUOJq.png)
+  ![Imgur](https://i.imgur.com/SPJG83f.png)
 
 ```
 1. git clone ...
