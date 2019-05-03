@@ -1,6 +1,6 @@
 # 스터디 자료
 
-### 1. React 및 Mobx 차이
+### 1. Redux 및 Mobx 차이
 >[링크클릭](http://woowabros.github.io/experience/2019/01/02/kimcj-react-mobx.html)
 
 ### 2. Mobx Store 및 Multiple Store 구성
