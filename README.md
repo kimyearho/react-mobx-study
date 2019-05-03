@@ -11,6 +11,7 @@
 ### 3. Material UI 및 공통 레이아웃 구성
 - Material-UI Framework 적용
 - 공통 레이아웃 추가
+- 샘플 좌측 레이아웃, 카드 컴포넌트 구성
   
   ![Imgur](https://i.imgur.com/SPJG83f.png)
 
