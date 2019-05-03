@@ -8,33 +8,11 @@
   border: 1px solid #000;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.Contents {
+  margin: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-width: 100%;
-  min-height: 100vh;
-  overflow: hidden;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 1vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.CardList {
+  display: inline-block;
+  margin: 10px 20px 10px 10px;
 }

@@ -1,5 +1,6 @@
 import EnemyStatusStore from './enemy'
 import UserStatusStore from './status'
+import CounterStore from './counter'
 
 /**
  * Multiple Store
@@ -8,6 +9,7 @@ import UserStatusStore from './status'
 class RootStore {
 
     constructor() {
+        this.counterStore = new CounterStore(this)
         this.userStore = new UserStatusStore(this)
         this.enemyStore = new EnemyStatusStore(this)
     }

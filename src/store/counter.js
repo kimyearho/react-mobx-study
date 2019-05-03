@@ -2,6 +2,10 @@ import { observable, action } from "mobx"
 
 export default class CounterStore {
 
+    constructor(rootStore) {
+        this.rootStore = rootStore
+    }
+
     // 감시 State 
     @observable number = 0;
 
