@@ -7,6 +7,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Header from '../Commons/Header'
 import LeftContents from '../Commons/LeftContents'
 import RightContents from '../Commons/RightContents'
+import Grow from '@material-ui/core/Grow';
 
 class App extends Component {
 
@@ -29,7 +30,9 @@ class App extends Component {
             <Grid item xs={12} md={8} className="TestlineBox">
               {/* <Counter callbackData={this.parentCallback} /> */}
               <div className="Contents">
-                <LeftContents />
+                <Grow in={true} style={{ transformOrigin: '0 0 0' }} timeout={3000}>
+                  <LeftContents />
+                </Grow>
               </div>
             </Grid>
             <Grid item xs={12} md={4} className="TestlineBox">

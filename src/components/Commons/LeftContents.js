@@ -7,7 +7,7 @@ import Card from '../Card/Card'
 @observer
 class LeftContents extends Component {
 
-    state = {   
+    state = {
         exampleList: []
     }
 
