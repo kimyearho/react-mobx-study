@@ -25,7 +25,8 @@
 - 가제) 채팅 서비스 레이아웃 샘플 적용
 - 패키지 구조 새로 정의
 - 각 기능별 컴포넌트 
-  
+
+- Layout Screen
 ![Imgur](https://i.imgur.com/Fz1ndpx.png)
 
 ```
