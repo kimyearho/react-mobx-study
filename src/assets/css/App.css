@@ -1,19 +1,48 @@
-.App {
+html, body {
+  margin: 0;
+  overflow: hidden;
+  max-height: 100%;
+}
+
+.app {
   width: 100%;
-  margin: auto;
-  /* overflow-x: hidden; */
+  margin: 10px;
 }
 
-.TestlineBox {
-  border: 1px solid #000;
+.contents {
+  height: 85vh;
+  border: 1px solid #ddd;
 }
 
-.Contents {
+.right {
+  width: 99%;
+}
+
+.left {
+  width: 99%;
+}
+
+.room-title-color {
+  background-color: #2196f3 !important;
+}
+
+.room-input-message {
+  width: 99% !important;
+}
+
+.chatBody {
+  width: 99%;
+  margin: 10px;
+  border: 1px solid #ddd;
+  padding-right: 30px;
+  height: 70vh;
+}
+
+.sample {
   text-align: center;
-  margin: 20px;
 }
 
-.CardList {
-  display: inline-block;
-  margin: 10px 20px 10px 10px;
+.footer {
+  width: 100%;
+  border: 1px solid #ddd;
 }

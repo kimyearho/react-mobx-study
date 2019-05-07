@@ -1,44 +1,29 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
+import { observer, inject } from 'mobx-react';
 
+// inject는 mobx-react에 있는 데코레이션 함수로써, 컴포넌트에서 스토어에 접근할 수 있게 해줌.
+// 정확히는 스토어에 있는 값을 컴포넌트의 props로 "주입"을 해줌.
+// 이때 매개변수는 index.js에서 Provider props명과 동일해야함.
+@inject('root')
+@observer
 class Counter extends Component {
-    // state 는 컴포넌트 내부에서 사용되는 객체임.
-    // Vue로 비유하자면 data() 내부 객체
-    state = {
-        number: 0,
-        message: "기본 메세지 입니다."
-    }
 
-    countPlus = () => {
-        this.setState({
-            number: this.state.number + 1
-        })
-    }
-
-    countMinus = () => {
-        this.setState({
-            number: this.state.number - 1
-        })
-    }
-
-    setText = (e) => {
-        this.setState({
-            message: e.target.value
-        })
+    callbackButton = () => {
+        this.props.callbackData({ data: '자식에서 부모로 데이터 전달' })
     }
 
     render() {
+        const { root } = this.props;
         return (
             <div>
-                <div>{this.state.message}</div>
-                <div><input placeholder="메세지 양방향 바인딩" onChange={this.setText} /></div>
-                <br/><hr />
-                <h1>카운터</h1>
-                <div>값: {this.state.number}</div>
-                <button onClick={this.countPlus}>증가</button>
-                <button onClick={this.countMinus}>감소</button>
+                <h1>{root.counterStore.number}</h1>
+                <button onClick={root.counterStore.increase}>+1</button>
+                &nbsp;
+                <button onClick={root.counterStore.decrease}>-1</button>
+                <button onClick={this.callbackButton}>부모 데이터 전달</button>
             </div>
-        )
+        );
     }
 }
 
-export default Counter
+export default Counter;
