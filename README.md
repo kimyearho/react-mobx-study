@@ -3,9 +3,11 @@
 이 저장소는 현재 진행 중.
 
 ### 1. Redux 및 Mobx 차이
-> [링크클릭](http://woowabros.github.io/experience/2019/01/02/kimcj-react-mobx.html)
+- [링크클릭](http://woowabros.github.io/experience/2019/01/02/kimcj-react-mobx.html)
 
-### 2. 기본 문법 및 React Component 사용.
+### 2. React 기본 문법 및 Component 사용법.
+- class type or function type Component
+- JSX
 
 ### 3. Mobx Store 및 Multiple Store 구성
 - 비지니스 로직 분리
