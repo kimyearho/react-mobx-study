@@ -13,6 +13,7 @@
     "react-app-rewired": "^2.1.3",
     "react-dom": "^16.8.6",
     "react-infinite-scroller": "^1.2.4",
+    "react-mui-login-register": "^0.7.3",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0"
   },

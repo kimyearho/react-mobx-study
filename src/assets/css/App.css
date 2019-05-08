@@ -1,6 +1,6 @@
 html, body {
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   max-height: 100%;
 }
 
@@ -40,6 +40,10 @@ html, body {
 
 .sample {
   text-align: center;
+}
+
+.mgt200 {
+  margin-top: 180px;
 }
 
 .footer {

@@ -8,6 +8,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames'
 
 const styles = theme => ({
@@ -16,7 +17,7 @@ const styles = theme => ({
 
 @inject("app")
 @observer
-class LeftContents extends Component {
+class Drawer extends Component {
 
   state = {
     items: []
@@ -24,15 +25,15 @@ class LeftContents extends Component {
 
   componentDidMount = () => {
     const menu = [
-      { menuName: 'My Chat', url: '' },
-      { menuName: 'Channel', url: '' },
-      { menuName: 'Workspace', url: '' }
+      { menuName: 'Home', url: '/home' },
+      { menuName: 'Channel', url: '/channelList' },
+      { menuName: 'Workspace', url: '/workspace' }
     ]
     this.setState({
       items: Object.assign([], menu)
     })
   };
-  
+
   render() {
     // const { classes } = this.props;
     const style = classNames("sample")
@@ -45,16 +46,22 @@ class LeftContents extends Component {
         <List>
           {
             this.state.items.map((item, index) => (
-              <ListItem button key={item.menuName}>
-                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                <ListItemText primary={item.menuName} />
-              </ListItem>
+              <Link to={item.url} key={index} onClick={() => this.menuSelected(item)}>
+                <ListItem button>
+                  <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                    <ListItemText primary={item.menuName} /> {index} 
+                </ListItem>
+              </Link>
             ))
           }
         </List>
       </div>
     );
   }
+
+  menuSelected = (item) => {
+    console.log(item)
+  }
 }
 
-export default withStyles(styles)(LeftContents)
+export default withStyles(styles)(Drawer)

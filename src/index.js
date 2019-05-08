@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./assets/css/index.css";
 import App from "./components/App/App";
 import * as serviceWorker from "./serviceWorker";
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from "mobx-react";
 
 import RootStore from "./store/root"
@@ -12,7 +13,9 @@ import RootStore from "./store/root"
 ReactDOM.render(
   <Provider app={RootStore}>
     {/* Provider 에 props 로 넣어줍니다. */}
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </Provider>,
   document.getElementById("root")
 );
