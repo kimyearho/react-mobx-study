@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react';
 import LoginRegister from 'react-mui-login-register';
-import classNames from 'classnames'
+import classNames from 'classnames';
 
 @inject('app')
 @observer
@@ -20,8 +20,12 @@ class Login extends Component {
         )
     }
 
+    // 로그인
     handleLogin = content => {
-        alert(`Logging in with content '${JSON.stringify(content)}'`);
+        const data = JSON.stringify(content);
+        this.props.app.userStore.setItem(data)
+
+        // 로그인 후 로그인 성공 이벤트를 LEFT 메뉴에 전달해야함.
     };
 
     handleLoginWithProvider = providerId => {

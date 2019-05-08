@@ -42,6 +42,10 @@ html, body {
   text-align: center;
 }
 
+.disable_link {
+  pointer-events: none;
+}
+
 .mgt200 {
   margin-top: 180px;
 }

@@ -2,6 +2,7 @@ import EnemyStatusStore from './enemy'
 import UserStatusStore from './status'
 import CounterStore from './counter'
 import RequestStore from './request'
+import UserStore from './user'
 
 /**
  * Multiple Store
@@ -14,6 +15,7 @@ class RootStore {
         this.userStore = new UserStatusStore(this)
         this.enemyStore = new EnemyStatusStore(this)
         this.requestStore = new RequestStore(this)
+        this.userStore = new UserStore(this)
     }
 
 }

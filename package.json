@@ -28,7 +28,14 @@
       "ecmaFeatures": {
         "legacyDecorators": true
       }
-    }
+    },
+    "overrides": [
+      {
+        "rules": {
+          "no-unused-expressions": "off"
+        }
+      }
+    ]
   },
   "browserslist": {
     "production": [
