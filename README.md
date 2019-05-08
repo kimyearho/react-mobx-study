@@ -18,17 +18,21 @@
 - props를 이용한 자식 데이터 전달
 - callback을 이용한 부모로 데이터 전달
 
-### 4. Material UI 적용
+### 4. Material UI 추가
 - Material-UI Framework 적용
 
-### 5. Sample Layout 적용
+### 5. Sample Layout 추가
 - 가제) 채팅 서비스 레이아웃 샘플 적용
 - 패키지 구조 새로 정의
 - 각 기능별 컴포넌트<br/>
 ![Imgur](https://i.imgur.com/xIKW3gI.png)
 
+### 6. React Router 및 Login Component 추가
+- React Router 적용
+- Login 컴포넌트 추가
+- 세션 스토어 추가
 - Layout Screen
-![Imgur](https://i.imgur.com/Fz1ndpx.png)
+![Imgur](https://i.imgur.com/jHbLx34.png)
 
 ```
 1. git clone ...
