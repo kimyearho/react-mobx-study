@@ -1,4 +1,4 @@
-import { observable, action } from "mobx"
+import { action } from "mobx"
 
 export default class UserStore {
 

@@ -9,7 +9,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
-import classNames from 'classnames'
 
 const styles = theme => ({
   toolbar: theme.mixins.toolbar
@@ -19,15 +18,19 @@ const styles = theme => ({
 @observer
 class Drawer extends Component {
 
+  constructor(props) {
+    super(props)
+    this.success = this.success.bind(this)
+  }
+
   state = {
     items: [],
     isLogin: false
   };
 
   componentDidMount = () => {
-
-    this.state.isLogin = this.props.app.userStore.getItem();
-
+    this.success()
+    this.props.app.eventStore.on('successLogin', this.success)
     const menu = [
       { menuName: 'Home', url: '/home' },
       { menuName: 'Channel', url: '/channelList' },
@@ -38,9 +41,14 @@ class Drawer extends Component {
     })
   };
 
+  success = () => {
+    this.setState({
+      isLogin: this.props.app.userStore.getItem()
+    })
+  }
+
   render() {
     // const { classes } = this.props;
-    const style = classNames("sample")
     return (
       <div>
         <div className="sample">

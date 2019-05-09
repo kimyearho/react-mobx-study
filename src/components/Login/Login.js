@@ -1,11 +1,27 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react';
+import { withRouter } from 'react-router-dom';
 import LoginRegister from 'react-mui-login-register';
 import classNames from 'classnames';
 
 @inject('app')
 @observer
 class Login extends Component {
+
+    state = {
+        isLogin: false
+    }
+
+    componentDidMount = () => {
+        const login = this.props.app.userStore.getItem();
+        if(login) {
+            this.setState({
+                isLogin: this.props.app.userStore.getItem()
+            })
+            this.props.history.push('/home');
+        }
+    }
+
     render() {
         const styles = classNames('sample', 'mgt200')
         return (
@@ -23,22 +39,17 @@ class Login extends Component {
     // 로그인
     handleLogin = content => {
         const data = JSON.stringify(content);
-        this.props.app.userStore.setItem(data)
-
+        const props = this.props.app
+        props.userStore.setItem(data)
         // 로그인 후 로그인 성공 이벤트를 LEFT 메뉴에 전달해야함.
+        props.eventStore.emit('successLogin', true)
     };
 
-    handleLoginWithProvider = providerId => {
-        alert(`Logging in with provider '${providerId}'`);
-    };
+    handleLoginWithProvider = providerId => {};
 
-    handleRegister = content => {
-        alert(`Registering with content '${JSON.stringify(content)}'`);
-    };
+    handleRegister = content => {};
 
-    handleRegisterWithProvider = providerId => {
-        alert(`Registering with provider '${providerId}'`);
-    };
+    handleRegisterWithProvider = providerId => {};
 }
 
-export default Login
+export default withRouter(Login)
