@@ -35,7 +35,7 @@ const styles = theme => ({
 });
 
 function generate(element) {
-    return [0, 1, 2, 4, 5, 6, 7, 8, 9, 10].map(value =>
+    return [0].map(value =>
         React.cloneElement(element, {
             key: value,
         }),
