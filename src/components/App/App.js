@@ -14,38 +14,9 @@ import Channel from '../ChatService/Channel/Channel'
 import RoomDetail from '../Commons/Layouts/Contents'
 import Footer from '../Commons/Layouts/Footer'
 
-import socketIOClient from "socket.io-client";
-
 @inject('app')
 @observer
 class App extends Component {
-
-  constructor(props) {
-    super(props)
-    this.success = this.success.bind(this)
-  }
-
-  componentDidMount = () => {
-    this.props.app.eventStore.on('successLogin', this.success)
-  }
-
-  success = () => {
-    this.socketConnection()
-  }
-
-  socketConnection = () => {
-    const socket = socketIOClient('http://localhost:4001');
-    socket.emit('connection')
-
-    socket.on('connect', function () {
-      console.log('Connected');
-      this.props.history.push('/home');
-    });
-
-    socket.on('connect_error', () => {
-      console.log('Connection Failed');
-    });
-  }
 
   render() {
     const leftLayout = classNames('contents', 'left')
