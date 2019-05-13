@@ -25,7 +25,6 @@ class RequestStroe {
 
   @action
   findPageSearch = (nextToken) => {
-    console.log(nextToken)
     if (nextToken) {
       const url =
         this.REQUEST_INFO.API_URL +

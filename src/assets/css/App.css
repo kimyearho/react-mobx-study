@@ -16,6 +16,7 @@ html, body {
 
 .right {
   width: 99%;
+  overflow-y: scroll;
 }
 
 .left {

@@ -1,4 +1,4 @@
-import io from 'socket.io-client';
+// import io from 'socket.io-client';
 
 /**
  * 소켓 클라이언트 클래스
@@ -12,7 +12,7 @@ class Socket {
     }
 
     login = () => {
-        const socketServer = 'http://localhost:4001'
+        // const socketServer = 'http://localhost:4001'
         return new Promise((resolve, reject) => {
 
             console.log('Login Promise !')

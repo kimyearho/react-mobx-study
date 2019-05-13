@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { observer, inject } from "mobx-react";
-import Card from "./Card/Card";
+import Card from "../Card/Card";
 
 @inject("app")
 @observer
