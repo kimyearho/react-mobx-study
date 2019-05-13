@@ -16,7 +16,7 @@ class RequestStroe {
   findSearch = () => {
     const url =
       this.REQUEST_INFO.API_URL +
-      `search?part=snippet&q=audio` +
+      `search?part=snippet&q=2019 Bilboard` +
       `&type=video,playlist,channel&maxResults=50&safeSearch=strict&key=${
         this.REQUEST_INFO.API_KEY
       }`;

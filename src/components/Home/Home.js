@@ -50,8 +50,7 @@ class Home extends Component {
         const { classes } = this.props;
         return (
             <div>
-                <h1 className="sample">Wellcome Home Component</h1>
-                <Grid container>
+                <Grid container className="sample">
                     {
                         this.state.list.map((item, index) => (
                             <Grid className={classes.gridItem} item xs={3}  key={index}>
