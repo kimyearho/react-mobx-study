@@ -9,8 +9,14 @@ class RequestStroe {
   @observable
   REQUEST_INFO = {
     API_URL: "https://www.googleapis.com/youtube/v3/",
-    API_KEY: "AIzaSyAcNGab-jHH_79rEhgFFFy_4oS46yUMNds"
+    API_KEY: "AIzaSyDHpgyP8vCtw78G-oYCVEfFCijEfxSJ8b8"
   };
+
+  @observable
+  data = {
+    list: [],
+    nextToken: null
+  }
 
   @action
   findSearch = () => {
@@ -18,7 +24,7 @@ class RequestStroe {
       this.REQUEST_INFO.API_URL +
       `search?part=snippet&q=2019 Bilboard` +
       `&type=video,playlist,channel&maxResults=50&safeSearch=strict&key=${
-        this.REQUEST_INFO.API_KEY
+      this.REQUEST_INFO.API_KEY
       }`;
     return axios.get(url);
   };
@@ -30,7 +36,7 @@ class RequestStroe {
         this.REQUEST_INFO.API_URL +
         `search?part=snippet&q=audio` +
         `&type=video,playlist,channel&maxResults=50&safeSearch=strict&pageToken=${nextToken}&key=${
-          this.REQUEST_INFO.API_KEY
+        this.REQUEST_INFO.API_KEY
         }`;
       return axios.get(url);
     }

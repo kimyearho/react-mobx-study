@@ -7,6 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import MailIcon from '@material-ui/icons/Mail';
+import classNames from 'classnames'
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 
@@ -33,8 +34,7 @@ class Drawer extends Component {
     this.props.app.eventStore.on('successLogin', this.success)
     const menu = [
       { menuName: 'Home', url: '/home' },
-      { menuName: 'Channel', url: '/channelList' },
-      { menuName: 'Workspace', url: '/workspace' }
+      { menuName: 'Channel', url: '/channelList' }
     ]
     this.setState({
       items: Object.assign([], menu)
@@ -48,9 +48,9 @@ class Drawer extends Component {
   }
 
   render() {
-    // const { classes } = this.props;
+    const leftMenu = classNames('contents', 'left')
     return (
-      <div>
+      <div className={leftMenu}>
         <div className="sample">
           <h2>Left Menu Component</h2>
         </div>

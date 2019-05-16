@@ -14,6 +14,8 @@ import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 
+import { inject, observer } from 'mobx-react'
+
 const styles = theme => ({
   root: {
     width: '100%',
@@ -84,11 +86,18 @@ const styles = theme => ({
   },
 });
 
+@inject('app')
+@observer
 class PrimarySearchAppBar extends React.Component {
   state = {
     anchorEl: null,
     mobileMoreAnchorEl: null,
   };
+
+  handleEventEmit = () => {
+    const eventStore = this.props.app.eventStore
+    eventStore.emit('reload', true)
+  }
 
   handleProfileMenuOpen = event => {
     this.setState({ anchorEl: event.currentTarget });
@@ -167,11 +176,11 @@ class PrimarySearchAppBar extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              React Chat Header Component
+              React Header Component
             </Typography>
             <div className={classes.grow} />
             <div className={classes.sectionDesktop}>
-              <IconButton color="inherit">
+              <IconButton color="inherit" onClick={this.handleEventEmit}>
                 <Badge badgeContent={4} color="secondary">
                   <MailIcon />
                 </Badge>

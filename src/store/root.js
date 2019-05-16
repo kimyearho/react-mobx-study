@@ -16,8 +16,8 @@ class RootStore {
         // this.userStore = new UserStatusStore(this)
         // this.enemyStore = new EnemyStatusStore(this)
         this.eventStore = new EventStore(this)
-        this.requestStore = new RequestStore(this)
         this.userStore = new UserStore(this)
+        this.reqStore = new RequestStore(this)
     }
 
 }

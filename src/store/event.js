@@ -14,6 +14,11 @@ class EventStore {
     }
 
     @action
+    removeAllListeners = (eventName) => {
+        this.eventbus.removeAllListeners(eventName);
+    }
+
+    @action
     removeEventListener = (eventName, listener) => {
         this.eventbus.removeListener(eventName, listener);
     }

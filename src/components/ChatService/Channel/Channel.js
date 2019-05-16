@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react';
 import { withStyles } from '@material-ui/core/styles';
+import { withRouter } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -89,4 +90,4 @@ class Channel extends Component {
     }
 }
 
-export default withStyles(styles)(Channel);
+export default withStyles(styles)(withRouter(Channel));

@@ -14,12 +14,7 @@ class Login extends Component {
 
     componentDidMount = () => {
         const login = this.props.app.userStore.getItem();
-        if(login) {
-            this.setState({
-                isLogin: this.props.app.userStore.getItem()
-            })
-            this.props.history.push('/home');
-        }
+        if(login) {}
     }
 
     render() {
@@ -41,8 +36,7 @@ class Login extends Component {
         const data = JSON.stringify(content);
         const props = this.props.app
         props.userStore.setItem(data)
-        // 로그인 후 로그인 성공 이벤트를 LEFT 메뉴에 전달해야함.
-        props.eventStore.emit('successLogin', true)
+        this.props.history.push('/home')
     };
 
     handleLoginWithProvider = providerId => {};

@@ -1,59 +1,68 @@
 import React, { Component } from 'react'
 import { observer, inject } from 'mobx-react';
+import { withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Card from '../Card/Card'
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
-    container: {
-        display: 'grid',
-        gridTemplateColumns: 'repeat(12, 1fr)',
-        gridGap: `${theme.spacing.unit * 3}px`,
+    button: {
+        margin: `${10}px ${0}px ${20}px ${10}px`  
     },
     gridItem: {
         marginBottom: `${20}px`
-    },
-    paper: {
-        padding: theme.spacing.unit,
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-        whiteSpace: 'nowrap',
-        marginBottom: theme.spacing.unit,
-    },
-    divider: {
-        margin: `${theme.spacing.unit * 2}px 0`,
-    },
+    }
 });
 
 @inject('app')
 @observer
 class Home extends Component {
 
-    state = {
-        list: [],
-        nextToken: ''
+    constructor(props) {
+        super(props)
+        this.home = this.props.app.reqStore
+        this.loading = false
     }
 
-    componentDidMount = () => {
-        const searchList = this.props.app.requestStore.findSearch()
-        searchList.then(result => {
-            const data = result.data;
-            this.setState({ list: data.items })
+    // 랜더링 되기전에 이미 이벤트를 받을 준비한다.
+    componentWillMount = () => {
+        const event = this.props.app.eventStore;
+        event.on('reload', this.reload)
+    }
 
-            if (data.nextPageToken) {
-                this.setState({ nextToken: data.nextPageToken })
-            }
+    // 랜더링이 완료된 후 실행
+    componentDidMount = () => {
+        this.reload()
+    }
+
+    // 컴포넌트가 종료되면 이벤트 리스너를 제거한다.
+    componentWillUnmount = () => {
+        const event = this.props.app.eventStore;
+        event.removeAllListeners('reload')
+    }
+
+    reload = () => {
+        const findSearch = this.home.findSearch();
+        findSearch.then(result => {
+            this.home.data.list = result.data.items;
+            this.home.data.nextToken = result.data.nextPageToken
+            this.loading = !this.loading
         })
     }
 
     render() {
-        const { classes } = this.props;
+        // store에서 observable을 props로 주입받음.
+        const { classes, app } = this.props;
+        // observable을 바라보고 있음.
+        // view에서 observable를 dispatch 하면 갱신 됨. 
+        const searchList = app.reqStore.data.list;
         return (
             <div>
-                <Grid container className="sample">
+                <Grid container style={{padding: '40px'}}>
                     {
-                        this.state.list.map((item, index) => (
-                            <Grid className={classes.gridItem} item xs={3}  key={index}>
+                        searchList.map((item, index) => (
+                            <Grid className={classes.gridItem} item xs={3} key={index}>
                                 <Card data={item} />
                             </Grid>
                         ))
@@ -64,4 +73,4 @@ class Home extends Component {
     }
 }
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(withRouter(Home));

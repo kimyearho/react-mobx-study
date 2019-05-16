@@ -51,6 +51,14 @@ html, body {
   margin-top: 180px;
 }
 
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 .footer {
   width: 100%;
   border: 1px solid #ddd;
