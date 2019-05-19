@@ -37,7 +37,6 @@ class MediaCard extends Component {
   }
 
   detail = data => {
-    console.log(data);
     this.props.history.push("/home/detail/123");
   };
 
