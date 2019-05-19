@@ -11,7 +11,6 @@ import Drawer from '../Commons/Layouts/Drawer'
 import Home from '../Home/Home'
 import Detail from '../Card/CardDetail'
 import Header from '../Commons/Layouts/Header'
-import Channel from '../ChatService/Channel/Channel'
 import Footer from '../Commons/Layouts/Footer'
 
 @inject('app')
@@ -45,9 +44,8 @@ class App extends Component {
                 {/* 주의할건 비교대상의 2뎁스 경로는 반드시 상위로 올라와야할 것.   */}
                 <Switch>
                   {/* 라우트별 표시 페이지 */}
-                  <Route path="/home/detail" component={Detail} />
+                  <Route path="/home/detail/:id" component={Detail} />
                   <Route path="/home" component={Home} />
-                  <Route path="/channelList" component={Channel} />
                 </Switch>
               </Grid>
             </Grid>

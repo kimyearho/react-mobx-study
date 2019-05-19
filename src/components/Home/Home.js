@@ -62,7 +62,7 @@ class Home extends Component {
                 <Grid container style={{padding: '40px'}}>
                     {
                         searchList.map((item, index) => (
-                            <Grid className={classes.gridItem} item xs={3} key={index}>
+                            <Grid className={classes.gridItem} item xs={12} key={index}>
                                 <Card data={item} />
                             </Grid>
                         ))
