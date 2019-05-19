@@ -47,29 +47,6 @@ class MediaCard extends Component {
       ? data.snippet.description
       : "None";
     return (
-      // <Card className={classes.card}>
-      //   <CardActionArea>
-      //     <CardMedia
-      //       className={classes.media}
-      //       image={data.snippet.thumbnails.high.url}
-      //       title="Contemplative Reptile"
-      //     />
-      //     <CardContent onClick={() => this.detail(data)}>
-      //       <Typography gutterBottom variant="h5" component="h2">
-      //         {data.snippet.title}
-      //     </Typography>
-      //       <Typography component="p">
-      //         {/* {description} */}
-      //       </Typography>
-      //     </CardContent>
-      //   </CardActionArea>
-      //   <CardActions>
-      //     <Button size="small" color="primary">
-      //       Share
-      //     </Button>
-      //   </CardActions>
-      // </Card>
-
       <Grid container spacing={16}>
         <Grid item xs={12} md={6}>
           <div className={classes.demo}>
