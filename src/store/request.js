@@ -16,27 +16,42 @@ class RequestStroe {
   data = {
     list: [],
     nextToken: null
-  }
+  };
+
+  @observable
+  detail = {
+    videoId: null,
+    item: []
+  };
 
   @action
   findSearch = () => {
     const url =
       this.REQUEST_INFO.API_URL +
-      `search?part=snippet&q=2019 Bilboard` +
-      `&type=video,playlist,channel&maxResults=50&safeSearch=strict&key=${
-      this.REQUEST_INFO.API_KEY
+      `search?part=snippet&q=One Punch Man - Garou's Theme` +
+      `&type=video&maxResults=50&safeSearch=strict&key=${
+        this.REQUEST_INFO.API_KEY
       }`;
     return axios.get(url);
   };
 
   @action
-  findPageSearch = (nextToken) => {
+  findVideo = videoId => {
+    const url =
+      this.REQUEST_INFO.API_URL +
+      `videos?part=snippet&id=${videoId}` +
+      `&key=${this.REQUEST_INFO.API_KEY}`;
+    return axios.get(url);
+  };
+
+  @action
+  findPageSearch = nextToken => {
     if (nextToken) {
       const url =
         this.REQUEST_INFO.API_URL +
         `search?part=snippet&q=audio` +
         `&type=video,playlist,channel&maxResults=50&safeSearch=strict&pageToken=${nextToken}&key=${
-        this.REQUEST_INFO.API_KEY
+          this.REQUEST_INFO.API_KEY
         }`;
       return axios.get(url);
     }

@@ -17,6 +17,9 @@ const styles = {
   },
   media: {
     height: 140
+  },
+  bottom: {
+    borderBottom: `${1}px solid`
   }
 };
 
@@ -29,7 +32,7 @@ class MediaCard extends Component {
   }
 
   detail = data => {
-    this.props.history.push("/home/detail/123");
+    this.props.history.push(`/home/detail/${data.id.videoId}`);
   };
 
   render() {
@@ -42,13 +45,16 @@ class MediaCard extends Component {
         <Grid item xs={12} md={6}>
           <div className={classes.demo}>
             <List>
-              <ListItem>
+              <ListItem className={classes.bottom.borderBottom}>
                 <ListItemAvatar>
                   <Avatar src={data.snippet.thumbnails.high.url}>
                     <FolderIcon />
                   </Avatar>
                 </ListItemAvatar>
-                <ListItemText onClick={this.detail} primary={data.snippet.title} />
+                <ListItemText
+                  onClick={() => this.detail(data)}
+                  primary={data.snippet.title}
+                />
               </ListItem>
             </List>
           </div>
