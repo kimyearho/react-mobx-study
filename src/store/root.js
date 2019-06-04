@@ -1,6 +1,3 @@
-// import EnemyStatusStore from './enemy'
-// import UserStatusStore from './status'
-// import CounterStore from './counter'
 import EventStore from './event'
 import RequestStore from './request'
 import UserStore from './user'
@@ -12,9 +9,6 @@ import UserStore from './user'
 class RootStore {
 
     constructor() {
-        // this.counterStore = new CounterStore(this)
-        // this.userStore = new UserStatusStore(this)
-        // this.enemyStore = new EnemyStatusStore(this)
         this.eventStore = new EventStore(this)
         this.userStore = new UserStore(this)
         this.reqStore = new RequestStore(this)

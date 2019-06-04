@@ -43,12 +43,13 @@ class Home extends Component {
     }
 
     reload = () => {
-        const findSearch = this.home.findSearch();
-        findSearch.then(result => {
-            this.home.data.list = result.data.items;
-            this.home.data.nextToken = result.data.nextPageToken
-            this.loading = !this.loading
-        })
+        this.home.findAllSearch()
+        // const findSearch = this.home.findSearch();
+        // findSearch.then(result => {
+        //     this.home.data.list = result.data.items;
+        //     this.home.data.nextToken = result.data.nextPageToken
+        //     this.loading = !this.loading
+        // })
     }
 
     render() {
