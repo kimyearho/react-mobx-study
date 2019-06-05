@@ -3,15 +3,14 @@ import { observer, inject } from 'mobx-react';
 import { Route, withRouter, Switch } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import '../../assets/css/App.css';
-
 import classNames from 'classnames'
 import Grid from '@material-ui/core/Grid';
 import Login from '../Login/Login'
-import Drawer from '../Commons/Layouts/Drawer'
-import Home from '../Home/Home'
-import Detail from '../Card/CardDetail'
+import Home from '../Home/index'
 import Header from '../Commons/Layouts/Header'
+import Drawer from '../Commons/Layouts/Drawer'
 import Footer from '../Commons/Layouts/Footer'
+import Detail from '../Home/components/videoList/detail/videoDetail'
 
 @inject('app')
 @observer

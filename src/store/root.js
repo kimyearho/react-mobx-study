@@ -1,5 +1,5 @@
 import EventStore from './event'
-import RequestStore from './request'
+import HometStore from './home'
 import UserStore from './user'
 
 /**
@@ -11,7 +11,7 @@ class RootStore {
     constructor() {
         this.eventStore = new EventStore(this)
         this.userStore = new UserStore(this)
-        this.reqStore = new RequestStore(this)
+        this.homeStore = new HometStore(this)
     }
 
 }

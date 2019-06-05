@@ -18,14 +18,6 @@ class HomeRepo {
         return axios.get(url);
     };
 
-    findVideo = videoId => {
-        const url =
-            this.API_URL +
-            `videos?part=snippet&id=${videoId}` +
-            `&key=${this.API_KEY}`;
-        return axios.get(url);
-    };
-
     findPageSearch = nextToken => {
         if (nextToken) {
             const url =
@@ -36,6 +28,15 @@ class HomeRepo {
             return axios.get(url);
         }
     };
+
+    findVideo = videoId => {
+        const url =
+            this.API_URL +
+            `videos?part=snippet&id=${videoId}` +
+            `&key=${this.API_KEY}`;
+        return axios.get(url);
+    };
 }
 
+// Singleton
 export default new HomeRepo()

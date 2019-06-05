@@ -44,16 +44,12 @@ const styles = theme => ({
 class CardDetail extends Component {
   constructor(props) {
     super(props);
-    this.reqStore = this.props.app.reqStore;
+    this.homeStore = this.props.app.homeStore;
   }
 
   componentWillMount() {
     const id = this.props.match.params.id;
-    const findVideo = this.reqStore.findVideo(id);
-    findVideo.then(result => {
-      this.reqStore.detail.videoId = result.data.items[0].id;
-      this.reqStore.detail.item = result.data.items[0];
-    });
+    this.homeStore.findDetailVideo(id);
   }
 
   _onReady(event) {
@@ -75,7 +71,7 @@ class CardDetail extends Component {
       <Paper className={classes.paper}>
         <div className={classes.contentWrapper}>
           <YouTube
-            videoId={app.reqStore.detail.videoId}
+            videoId={app.homeStore.detail.videoId}
             opts={opts}
             onReady={this._onReady}
           />

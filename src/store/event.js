@@ -3,8 +3,7 @@ import EventEmitter from 'events'
 
 class EventStore {
 
-    constructor(rootStore) {
-        this.rootStore = rootStore
+    constructor() {
         this.eventbus = new EventEmitter()
     }
 

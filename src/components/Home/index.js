@@ -3,12 +3,12 @@ import { observer, inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Card from '../Card/Card'
+import Card from './components/videoList/index'
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
     button: {
-        margin: `${10}px ${0}px ${20}px ${10}px`  
+        margin: `${10}px ${0}px ${20}px ${10}px`
     },
     gridItem: {
         marginBottom: `${20}px`
@@ -21,7 +21,7 @@ class Home extends Component {
 
     constructor(props) {
         super(props)
-        this.home = this.props.app.reqStore
+        this.home = this.props.app.homeStore
         this.loading = false
     }
 
@@ -44,12 +44,6 @@ class Home extends Component {
 
     reload = () => {
         this.home.findAllSearch()
-        // const findSearch = this.home.findSearch();
-        // findSearch.then(result => {
-        //     this.home.data.list = result.data.items;
-        //     this.home.data.nextToken = result.data.nextPageToken
-        //     this.loading = !this.loading
-        // })
     }
 
     render() {
@@ -57,10 +51,10 @@ class Home extends Component {
         const { classes, app } = this.props;
         // observable을 바라보고 있음.
         // view에서 observable를 dispatch 하면 갱신 됨. 
-        const searchList = app.reqStore.data.list;
+        const searchList = app.homeStore.data.list;
         return (
             <div>
-                <Grid container style={{padding: '40px'}}>
+                <Grid container style={{ padding: '40px' }}>
                     {
                         searchList.map((item, index) => (
                             <Grid className={classes.gridItem} item xs={12} key={index}>
