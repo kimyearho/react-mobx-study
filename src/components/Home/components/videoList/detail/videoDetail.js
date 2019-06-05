@@ -47,7 +47,7 @@ class CardDetail extends Component {
     this.homeStore = this.props.app.homeStore;
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const id = this.props.match.params.id;
     this.homeStore.findDetailVideo(id);
   }
@@ -59,6 +59,7 @@ class CardDetail extends Component {
 
   render() {
     const { classes, app } = this.props;
+    console.log(app.homeStore.videoId)
     const opts = {
       height: "560",
       width: "935",
@@ -67,16 +68,24 @@ class CardDetail extends Component {
         autoplay: 1
       }
     };
+
     return (
-      <Paper className={classes.paper}>
-        <div className={classes.contentWrapper}>
-          <YouTube
-            videoId={app.homeStore.detail.videoId}
-            opts={opts}
-            onReady={this._onReady}
-          />
-        </div>
-      </Paper>
+      <div>
+        <Paper className={classes.paper}>
+          <div className={classes.contentWrapper}>
+            <YouTube
+              videoId={app.homeStore.videoId}
+              opts={opts}
+              onReady={this._onReady}
+            />
+          </div>
+        </Paper>
+        <Paper>
+          <Typography component="p">
+            {/* {app.homeStore.detail.item.title} */}
+          </Typography>
+        </Paper>
+      </div>
     );
   }
 }

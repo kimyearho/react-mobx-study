@@ -6,13 +6,12 @@ export default class VideoModel {
         extendObservable(this, data)
     }
 
-    @computed
     get getOneVideo() {
-        return this.items[0]
+        return this.items[0].snippet
     }
 
-    @computed
     get getVideoId() {
-        return this.getOneVideo.id
+        return this.items[0].videoId
     }
+    
 }

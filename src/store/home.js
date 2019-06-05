@@ -12,10 +12,10 @@ export default class HomeStore {
   };
 
   @observable
-  detail = {
-    videoId: null,
-    item: []
-  };
+  detail = null
+
+  @observable
+  videoId = '';
 
   @action
   findAllSearch = () => {
@@ -47,8 +47,8 @@ export default class HomeStore {
       .then(result => {
         const data = result.data;
         const videoModelData = new VideoModel(data)
-        this.detail.videoId = videoModelData.getVideoId
-        this.detail.item = videoModelData.getOneVideo
+        this.detail = videoModelData.getOneVideo
+        this.videoId = videoModelData.getVideoId
       })
   }
 
