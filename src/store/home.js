@@ -12,7 +12,9 @@ export default class HomeStore {
   };
 
   @observable
-  detail = null
+  detail = {
+    item: []
+  }
 
   @observable
   videoId = '';
@@ -47,7 +49,7 @@ export default class HomeStore {
       .then(result => {
         const data = result.data;
         const videoModelData = new VideoModel(data)
-        this.detail = videoModelData.getOneVideo
+        this.detail.item = videoModelData.getOneVideo
         this.videoId = videoModelData.getVideoId
       })
   }

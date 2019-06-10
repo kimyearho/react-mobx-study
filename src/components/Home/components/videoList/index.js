@@ -52,6 +52,7 @@ class MediaCard extends Component {
                   </Avatar>
                 </ListItemAvatar>
                 <ListItemText
+                  className="videoTitleText"
                   onClick={() => this.detail(data)}
                   primary={data.snippet.title}
                 />

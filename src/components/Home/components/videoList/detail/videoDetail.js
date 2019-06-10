@@ -20,7 +20,8 @@ const styles = theme => ({
   paper: {
     maxWidth: 936,
     margin: "auto",
-    overflow: "hidden"
+    overflow: "hidden",
+    background: "#000"
   },
   searchBar: {
     borderBottom: "1px solid rgba(0, 0, 0, 0.12)"
@@ -33,9 +34,6 @@ const styles = theme => ({
   },
   addUser: {
     marginRight: theme.spacing.unit
-  },
-  contentWrapper: {
-    // margin: "40px 16px"
   }
 });
 
@@ -53,36 +51,31 @@ class CardDetail extends Component {
   }
 
   _onReady(event) {
-    // access to player in all event handlers via event.target
     event.target.pauseVideo();
   }
 
   render() {
     const { classes, app } = this.props;
-    console.log(app.homeStore.videoId)
     const opts = {
       height: "560",
       width: "935",
       playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 1
+        autoplay: 0
       }
     };
 
     return (
-      <div>
+      <div style={{ 'background': '#000' }}>
         <Paper className={classes.paper}>
-          <div className={classes.contentWrapper}>
-            <YouTube
-              videoId={app.homeStore.videoId}
-              opts={opts}
-              onReady={this._onReady}
-            />
-          </div>
+          <YouTube
+            videoId={app.homeStore.videoId}
+            opts={opts}
+            onReady={this._onReady}
+          />
         </Paper>
-        <Paper>
-          <Typography component="p">
-            {/* {app.homeStore.detail.item.title} */}
+        <Paper style={{ borderRadius: '0px' }}>
+          <Typography component="p" style={{ fontSize: '23px' }}>
+            {app.homeStore.detail.item.title}
           </Typography>
         </Paper>
       </div>

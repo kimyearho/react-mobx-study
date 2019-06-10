@@ -1,4 +1,4 @@
-import { extendObservable, computed } from "mobx";
+import { extendObservable, toJS, computed } from "mobx";
 
 export default class VideoModel {
 
@@ -6,12 +6,13 @@ export default class VideoModel {
         extendObservable(this, data)
     }
 
+    @computed
     get getOneVideo() {
-        return this.items[0].snippet
+        return toJS(this.items[0].snippet)
     }
 
     get getVideoId() {
-        return this.items[0].videoId
+        return toJS(this.items[0].id);
     }
     
 }

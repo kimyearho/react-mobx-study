@@ -54,7 +54,7 @@ class Home extends Component {
         const searchList = app.homeStore.data.list;
         return (
             <div>
-                <Grid container style={{ padding: '40px' }}>
+                <Grid container style={{ padding: '40px', background: 'rgba(0, 0, 0, 0.84)' }}>
                     {
                         searchList.map((item, index) => (
                             <Grid className={classes.gridItem} item xs={12} key={index}>

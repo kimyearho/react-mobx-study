@@ -13,7 +13,7 @@ class HomeRepo {
     findSearch = () => {
         const url =
             this.API_URL +
-            `search?part=snippet&q=One Punch Man - Garou's Theme` +
+            `search?part=snippet&q=【HD】Fate/Zero OP2 - Kalafina - to the beginning` +
             `&type=video&maxResults=50&safeSearch=strict&key=${this.API_KEY}`;
         return axios.get(url);
     };

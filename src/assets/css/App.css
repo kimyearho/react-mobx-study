@@ -63,3 +63,12 @@ html, body {
   width: 100%;
   border: 1px solid #ddd;
 }
+
+.videoTitleText > .MuiTypography-subheading-76 {
+  color: #ffffff;
+}
+
+.videoTitleText > .MuiTypography-subheading-76:hover {
+  cursor: pointer;
+  color: #2196f3;
+}
