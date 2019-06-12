@@ -100,6 +100,7 @@ class AutoComplate extends React.Component {
         });
     };
     query() {
+        this.store.searchQuery = this.state.value
         this.store.findAllSearch(this.state.value)
     };
     render() {

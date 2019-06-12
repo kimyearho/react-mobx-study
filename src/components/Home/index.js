@@ -43,7 +43,8 @@ class Home extends Component {
     }
 
     reload = () => {
-        this.home.findAllSearch()
+        const searchQuery = this.home.searchQuery ? this.home.searchQuery : ''
+        this.home.findAllSearch(searchQuery)
     }
 
     render() {

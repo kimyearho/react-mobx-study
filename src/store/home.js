@@ -17,12 +17,15 @@ export default class HomeStore {
   }
 
   @observable
-  videoId = '';
+  videoId = null
+
+  @observable
+  searchQuery = null
 
   @action
-  findAllSearch = (searchQuery) => {
+  findAllSearch = () => {
     HomeRepo
-      .findSearch(searchQuery)
+      .findSearch(this.searchQuery)
       .then(result => {
         const data = result.data;
         const homeModelData = new HomeModel(data)
