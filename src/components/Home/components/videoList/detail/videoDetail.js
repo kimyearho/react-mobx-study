@@ -74,8 +74,11 @@ class CardDetail extends Component {
           />
         </Paper>
         <Paper style={{ borderRadius: '0px' }}>
-          <Typography component="p" style={{ fontSize: '23px' }}>
+          <Typography component="p" style={{ paddingLeft: '10px', fontSize: '23px' }}>
             {app.homeStore.detail.item.title}
+          </Typography>
+          <Typography component="p" style={{ paddingLeft: '10px', fontSize: '18px' }}>
+            {app.homeStore.detail.item.channelTitle}
           </Typography>
         </Paper>
       </div>

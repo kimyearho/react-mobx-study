@@ -20,9 +20,9 @@ export default class HomeStore {
   videoId = '';
 
   @action
-  findAllSearch = () => {
+  findAllSearch = (searchQuery) => {
     HomeRepo
-      .findSearch()
+      .findSearch(searchQuery)
       .then(result => {
         const data = result.data;
         const homeModelData = new HomeModel(data)
