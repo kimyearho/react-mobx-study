@@ -18,7 +18,7 @@ import YouTube from "react-youtube";
 
 const styles = theme => ({
   paper: {
-    maxWidth: 936,
+    maxWidth: 1280,
     margin: "auto",
     overflow: "hidden",
     background: "#000"
@@ -57,8 +57,8 @@ class CardDetail extends Component {
   render() {
     const { classes, app } = this.props;
     const opts = {
-      height: "560",
-      width: "935",
+      height: "720",
+      width: "1280",
       playerVars: {
         autoplay: 0
       }

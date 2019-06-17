@@ -3,7 +3,7 @@ import { observer, inject } from 'mobx-react';
 import { withRouter } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Card from './components/videoList/index'
+import VideoItem from './components/video/list'
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
@@ -59,7 +59,7 @@ class Home extends Component {
                     {
                         searchList.map((item, index) => (
                             <Grid className={classes.gridItem} item xs={12} key={index}>
-                                <Card data={item} />
+                                <VideoItem data={item} />
                             </Grid>
                         ))
                     }

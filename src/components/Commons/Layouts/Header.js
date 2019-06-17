@@ -128,11 +128,11 @@ class PrimarySearchAppBar extends React.Component {
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
-              React Header Component
+              React
             </Typography>
 
             {/* Auto */}
-            <div style={{ marginLeft: '470px' }}>
+            <div style={{ marginLeft: '217px' }}>
               <AutoComplate />
             </div>
 

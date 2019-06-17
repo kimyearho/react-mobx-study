@@ -10,7 +10,7 @@ import Home from '../Home/index'
 import Header from '../Commons/Layouts/Header'
 import Drawer from '../Commons/Layouts/Drawer'
 import Footer from '../Commons/Layouts/Footer'
-import Detail from '../Home/components/videoList/detail/videoDetail'
+import Detail from '../Home/components/video/detail/detail'
 
 @inject('app')
 @observer

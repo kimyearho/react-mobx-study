@@ -1,7 +1,7 @@
 import { observable, action } from "mobx";
 import HomeRepo from "../components/Home/repo/index"
 import HomeModel from "../components/Home/model/index"
-import VideoModel from "../components/Home/components/videoList/model/index"
+import VideoModel from "../components/Home/components/video/model/index"
 
 export default class HomeStore {
 
